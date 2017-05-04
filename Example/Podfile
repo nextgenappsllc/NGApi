@@ -1,6 +1,6 @@
 use_frameworks!
 target 'NGApi_Tests' do
-    pod 'NGAEssentials', path: '~/swift/pods/NGAEssentials'
+  pod 'NGAEssentials', path: '~/swift/pods/NGAEssentials'
   pod 'NGApi', :path => '../'
   
   pod 'Quick', '~> 1.0.0'

@@ -1,6 +1,3 @@
-#source '~/.cocoapods/repos/local-specs'
-#source 'jose@localhost:.cocoapods/repos/local-specs'
-#source 'jose@localhost:.cocoapods/repos/master'
 use_frameworks!
 target 'NGApi_Tests' do
     pod 'NGAEssentials', path: '~/swift/pods/NGAEssentials'

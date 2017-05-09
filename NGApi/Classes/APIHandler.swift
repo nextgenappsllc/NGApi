@@ -121,6 +121,19 @@ open class APIHandler: NSObject, URLSessionDelegate, URLSessionDownloadDelegate,
         return task
     }
     
+    
+    @discardableResult open func sendRequestWithJSONDataTo(_ url:String, method:HTTPMethod = .POST, data:Data, headerFields:[String:String]? = nil, progressBlock:DataProgressBlock? = nil, completionBlock:@escaping NetworkResponseBlock) -> URLSessionTask? {
+        guard var request = url.url?.toRequest() else {return nil}
+        request.httpMethod = method.rawValue
+        if let h = headerFields{for (k,v) in h{request.setValue(v, forHTTPHeaderField: k)}}
+        let task:URLSessionTask
+        request.setValue(data.count.toString(), forHTTPHeaderField: HTTPHeaderField.ContentLength.rawValue)
+        task = defaultDataSession.uploadTask(with: request, from: data, completionHandler: completionBlock)
+        dataTaskUpdateBlock = progressBlock
+        task.resume()
+        return task
+    }
+    
     //MARK: Properties
     
     /**

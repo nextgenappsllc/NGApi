@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NGApi'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'A simple API handler'
 
 # This description is used to generate tags and improve search results.
@@ -40,5 +40,5 @@ A simple API handler wrapped around NSURLSessions.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'NGAFramework', git: 'ssh://jose@localhost/Users/Jose/swift/pods/NGAFramework/'
-    s.dependency 'NGAEssentials', '~> 0.1'
+    s.dependency 'NGAEssentials', '~> 0.2'
 end
